@@ -16,9 +16,7 @@ $(document).ready(function(){
         $('.right-wrapper .nav-links').addClass('in');
          $('.right-wrapper .close').removeClass('d-none');
          $(this).addClass('d-none');
-        //$('.header-on-scroll').addClass('no-transition').css('width', win_width+'px');
         $('body').append('<div class="body-overlay"></div>');
-        //$('.body-overlay').fadeIn();
     });
 
 
@@ -27,10 +25,8 @@ $(document).ready(function(){
         $(this).addClass('d-none');
         $('.right-wrapper .hamburger').removeClass('d-none');
         setTimeout(function () {
-            //$('.navigation-slide').removeClass('in');
             $('body').removeClass('no-scroll').attr('style','');
             $('.body-overlay').remove();
-            //$('.body-overlay').fadeOut();
             
         }, 600);
     });
@@ -119,20 +115,6 @@ $(document).ready(function(){
             scrollMonth: false,
             scrollInput: false,
         });
-
-        /* Faq */
-       /*  $('.information .info-holder').click(function(){
-            var answer = $(this).find('.answer');
-            var close = $(this).find('.minus,.plus');
-            $(this).siblings().find('.answer').slideUp();
-            $(this).siblings().find('.minus').hide();
-            $(this).siblings().find('.plus').show();
-            close.toggle();
-            answer.slideToggle();
-
-        }); */
-
-        
 });
 
 
