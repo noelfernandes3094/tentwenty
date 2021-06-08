@@ -147,6 +147,22 @@ header{
                     }
                 }
 
+                @include bp(tablet-md){
+                    &.currency a{
+                        margin-left: 28px;
+                        &:before{
+                            content:'';
+                            position: absolute;
+                            left: -28px;
+                            pointer-events: none;
+                            top:2px;
+                            height:24px;
+                            width:1px;
+                            background-color: color(grey,border);
+                        }
+                    }
+                }
+
                 @include bp(tablet-sm){
                     &.currency a:after {
                         right: 0;

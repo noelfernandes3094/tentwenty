@@ -13,8 +13,11 @@
         cursor: pointer;
 
         img{
-            width: 30px;
-            height: 30px;
+
+            @include bp(mobile){
+                width: 30px;
+                height: 30px;
+            }
         }
         &.arrow-left {
             left: 36px;
@@ -79,7 +82,14 @@
                 background-color: color(white);
                 margin-top: 7px;
                 opacity: 0.4;
-
+                position: relative;
+               /*  &:after{
+                    content:'';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background-color: color(pink);
+                } */
                 @include bp(mobile-sm){
                     display: none;
                 }
@@ -88,6 +98,17 @@
             &.slick-current{
                 .progress{
                     opacity: 1;
+                   /*  &:after {
+                        animation: width 7600ms linear infinite;
+                        @keyframes width {
+                            from{
+                                width: 0;
+                            }
+                            to{
+                                width: 100%;
+                            }
+                        }
+                    } */
                 }
             }
         }
@@ -100,6 +121,43 @@
             max-width:100%;
             margin-right: 0;
             padding: 0 12px;
+        }
+    }
+
+    .sync-3{
+        max-width:92px;
+        position: absolute;
+        bottom: 49px;
+        left: 560px;
+        &:after {
+            content: '+12 more';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-65%, -57%);
+            color:color(white);
+            @include font-rem(14px, 20px);
+            width: 60px;
+            font-weight: 500;
+        }
+        .img-wrapper{
+            position: relative;
+        }
+        .overlay{
+            position: absolute;
+            top:0;
+            bottom: 0;
+            right: 0;
+            left:0;
+            background-color: rgba(0, 7, 17, 0.64);
+        }
+        img {
+            height: 60px;
+            width: 92px;
+        }
+
+        @include bp(mobile){
+            display: none;
         }
     }
 }
@@ -127,6 +185,12 @@
         @include bp(mobile) {
             @include font-rem(18px, 22px);
         }
+    }
+
+    .desktop-holder{
+        max-width: 672px;
+        width: 100%;
+        padding-left: 26px;
     }
 
     .detail-wrapper {
@@ -448,13 +512,7 @@
         }
     } //Left-col end
 
-    /* Column-modified */
-    .cl-pad{
-        @include bp(tablet-md){
-            padding-left: 58px;
-        }
-    }
-
+    /* Right columns start */
     .offer-price{
         border: 1px solid color(grey, border);
         border-radius: 2px;
