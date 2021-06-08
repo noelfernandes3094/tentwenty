@@ -1,0 +1,129 @@
+footer{
+    padding: 33px 0 0 0;
+    background-color: color(grey,bg);
+
+    .logo{
+        margin-bottom: 14px;
+    }
+    .title{
+        font-weight: 500;
+        @include font-rem(14px,20px);
+    }
+
+    .c-1{
+        .comm-content{
+            @include font-rem(18px,16px);   
+            width:90px;
+            font-weight: 500;
+            opacity: 0.3;
+            @include bp(tablet-sm){
+                @include font-rem(16px);
+            }
+
+            @include bp(mobile-sm){
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .link-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        >ul{
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+
+    ul.nav-list {
+        list-style: none;
+        padding: 0;
+        li a{
+            @include font-rem(14px,24px);
+            color:color(grey,base);
+            text-decoration: none;
+        }
+
+        li.f-currency{
+            a{
+                position: relative;
+                display: inline-block;
+                padding-right: 10px;
+                &:after{
+                    content:'';
+                    position: absolute;
+                    top:10px;
+                    right: 0;
+                    border-top: 4px solid color(grey, base);
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                }
+
+                &:hover:after{
+                   border-top: 4px solid color(grey, pink);
+                }
+            }
+        }
+        &.pink a{
+            color:color(pink);
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+
+        @include bp(mobile-sm){
+            margin-bottom: 30px;
+        }
+    }
+
+    ul.curreny-options{
+        display: none;
+        padding-left: 5px;
+        list-style: none;
+        @include font-rem(12px, 20px);
+        div{
+            font-weight: 500;
+        }
+
+    }
+
+    .button{
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    .footer-bottom{
+        margin-top: 32px;
+        padding: 22px 0;
+        border-top: 1px solid rgba(0,0,0,0.08);
+        div{
+            @include font-rem(12px,14px);
+            color:color(lightblack);
+            a {
+                color: color(pink);
+            }
+
+            &.developed{
+                text-align: right;
+                span{
+                    color:color(black);
+                    opacity: 0.5;
+                }
+                a{
+                    opacity: 1;
+                    font-weight: 500;
+                    color:color(lightblack);
+                }
+                @include bp(mobile) {
+                    text-align: center;
+                }
+            }
+
+            @include bp(mobile){
+                text-align: center;
+            }
+        }
+
+        
+    }
+}

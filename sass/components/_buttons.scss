@@ -1,0 +1,32 @@
+// ==========================================================================
+//  Site Button Component
+//  ==========================================================================
+
+//Buttons 
+
+.button{
+    display: inline-block;
+    text-decoration: none;
+    color:color(alternate);
+    @include font-rem(14px,24px);
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius:3px;
+    padding: 12px 16px;
+
+    &:hover{
+        color:color(white);
+        background-color: color(pink);
+    }
+
+    &.pink{
+        background-color: color(pink);
+        color:color(white);
+        &:hover{
+            background-color: color(white);
+            color:color(black);
+        }
+    }
+}

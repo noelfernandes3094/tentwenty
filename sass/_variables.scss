@@ -1,0 +1,104 @@
+
+/* ==========================================================================
+  COMMON VARIABLES
+  ========================================================================== */
+
+
+// Color variable map
+$colors: (
+  // non-nested values
+  black: #000,
+  white: #fff,
+  basecolor:#a5a5a5,
+  alternate:#2B2B2B,
+  lightblack: #484848,
+  lblack:#1D1D1D,
+  pink: #FE6768,
+  blue:#34A5CB,
+  green:#06B5AF,
+  failure: rgba(199, 28, 28, 0.73),
+  success: #00AC57,
+  warning: #EA9F12,
+  grey-light: #f4f2ef,
+
+  // nested map inception
+  primary: (
+    base: #27568E,
+    light: #29588C,
+    alternate: #52707A,
+    lighten: lighten(#02A4C4,15%),
+    trans: transparentize(#02A4C4, 0.5)
+  ),
+  secondary: (
+    base: #09284D,
+    light: #576E8D,
+    trans: transparentize(#09284D, 0.5)
+  ),
+  grey: (
+    base: #7C7C7C,
+    bg:#F8F8F9,
+    border:#E6E6E6,
+    var1:#939393,
+    var2:#666666,
+    var3:#616161,
+    var4:#8F969C,
+    var5:#8C9399,
+    var6:#F6F7F8
+    )
+);
+
+// Usage
+// .header{
+//   color: color(primary,base); //Nested
+//   color: color(footer);//Direct
+// }
+
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+
+// ==========================================================================
+//  COMPONENT SPECIFIC VARIABLES
+//  ==========================================================================
+
+// TYPOGRAPHY
+//   ==========================================================================
+$htmlFontSize: 16px;
+$baseFontSize: 16px;
+$baseFontFamily: 'Roboto',sans-serif;
+$font-awesome: 'FontAwesome';
+$font-awesome-5: 'Font Awesome 5 Free';
+$baseLineHeight: 1.5;
+$baseTextColor: #5F5A5A;
+
+
+// ==========================================================================
+//  MIN HEIGHT FOR CONTAINER
+//  ==========================================================================
+$min-height-desktop: 85vh;
+$min-height-mobile : 80vh;
+
+//Font mixin 
+@mixin font($size:16px, $line-height:normal, $weight:normal, $style:normal) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+
+/* Gilroy fonts */
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('../fonts/gilroy-font/Gilroy-Regular.ttf') format('opentype'),
+    url('../font/gilroy-font/Gilroy-Regular.ttf?#iefix') format('embedded-opentype');
+}
+
+
+$gilroy_regular: 'Gilroy-Regular',sans-serif;

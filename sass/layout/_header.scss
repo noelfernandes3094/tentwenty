@@ -1,0 +1,290 @@
+header{
+    box-shadow: inset 0 -1px 0 0 rgba(215, 215, 215, 0.5);
+    position: relative;
+    z-index: 1002;
+    background-color: color(white);
+    nav{
+        padding:16px 0;
+        .mid-wrapper{
+           max-width: 410px;
+           width: 100%;
+           margin-right:20px;
+
+           @media (max-width:1080px){
+                max-width: 320px;
+           }
+        }
+        
+        .logo{
+            max-width: 48px;
+            margin-right: 36px;
+
+            @include bp(mobile-sm){
+               margin-right: 20px;
+            }
+        }
+        .search {
+            width: 100%;
+            position: relative;
+            i{
+                position: absolute;
+                top:16px;
+                left: 16px;
+                opacity: 0.3;
+
+                @include bp(tablet-sm){
+                    top:14px;
+                    @include font-rem(14px);
+                }
+            }
+            input {
+                background-color: color(grey, bg);
+                border:1px solid color(grey, bg);
+                padding:14px 16px 14px 45px;
+                width: 100%;
+                @include font-rem(18px,20px);
+                border-radius: 3px;
+                box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.04),
+                0 2px 10px 0 rgba(0, 0, 0, 0.08);
+
+                &::-webkit-search-cancel-button,
+                &::-webkit-search-decoration {
+                    -webkit-appearance: none;
+                    appearance: none;
+                }
+
+                @include input-placeholder{
+                    opacity: 0.3;
+                    @include font-rem(18px, 20px);
+
+                    @include bp(ipad-pro) {
+                        @include font-rem(16px, 20px);
+                    }
+
+                    @include bp(mobile-sm) {
+                        @include font-rem(14px);
+                    }
+                }
+                @include bp(ipad-pro) {
+                    @include font-rem(16px, 20px);
+                }
+
+                @include bp(tablet-sm){
+                    padding:10px 16px 10px 45px;
+                }
+
+                @include bp(mobile-sm){
+                    @include font-rem(14px);
+                }
+            }
+        }
+        
+        .right-wrapper {
+            align-self: center;
+            position: relative;
+
+            .close,.hamburger{
+                i{
+                    @include font-rem(26px);
+                }
+                @include bp(tablet-md){
+                    display: none;
+                }
+            }
+
+            .close{
+                position: relative;
+                z-index: 10012;
+            }
+
+            .nav-links {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                margin-bottom: 0;
+                transition: all 0.3s ease-in-out;
+
+                &.in{
+                    right:0;
+                }
+                @include bp(tablet-sm){
+                    width: 320px;
+                    padding: 60px 0;
+                    position: fixed;
+                    z-index: 1010;
+                    align-content: baseline;
+                    right:-320px;
+                    top:0;
+                    overflow-y: auto;
+                    background-color: color(white);
+                    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0,0.3);
+                    height: 100vh;
+                }
+            }
+
+            li{
+                margin:2px 15px;
+                position: relative;
+
+                &.currency a, &.user{
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 12px;
+                        right: -8px;
+                        transform: all 0.3s ease;
+                        border-top: 4px solid color(black);
+                        border-left: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                    }
+
+                    &:hover:after{
+                        border-top: 4px solid color(pink);
+                    }
+                }
+
+                @include bp(tablet-sm){
+                    &.currency a:after {
+                        right: 0;
+                    }
+                }
+
+                &.notifications{
+                    a i {
+                        @include font-rem(16px);
+                    }
+
+                    &.available{
+                        a{
+                            position: relative;
+                            &:after{
+                                content:'';
+                                position: absolute;
+                                right: 4px;
+                                width: 7px;
+                                height: 7px;
+                                border-radius: 50%;
+                                border:2px solid color(white);
+                                background-color: color(pink);
+                            }
+                        }
+                    }
+
+                    @include bp(tablet-sm){
+                        width: auto;
+                    }
+                }
+
+                &.user{
+                     &:after{
+                         top:24px;
+                     }
+                    span {
+                        background: radial-gradient(circle, #FD5C63 0%, #FF927B 100%);
+                        display: inline-flex;
+                        color:color(white);
+                        @include font-rem(16px,19px);
+                        font-weight:700px;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+                     @include bp(tablet-sm) {
+                         width: auto;
+                     }
+                }
+                
+                @include bp(ipad-pro) {
+                   margin:2px 10px;
+                }
+
+                @include bp(tablet-sm){
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
+            }
+            a{
+                color: color(black);
+                display: inline-block;
+                @include font-rem(14px,19px);
+                font-weight: 500;
+                text-decoration: none;
+                padding:5px;
+                i{
+                    color: #cacaca;
+                }
+
+                @include bp(tablet-sm) {
+                    display: block;
+                }
+            }
+
+            /* Dropdown menu*/
+            ul.curreny-options,
+            .sub-menu {
+                padding: 0 0 20px 0;
+                display: none;
+                list-style: none;
+                background-color: color(white);
+                position: absolute;
+                border-radius: 3px;
+                right: -10px;
+                top: 28px;
+                width: 180px;
+                border: 1px solid color(grey-light);
+
+                .text {
+                    font-weight: bold;
+                    padding: 10px;
+                    border-bottom: 1px solid color(basecolor);
+                }
+
+                li {
+                    font-weight: normal;
+                    margin: 0;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+
+                    &:hover {
+                        background-color: rgba(254, 103, 104, 0.4);
+                    }
+
+                    &.selected {
+                        background-color: rgba(254, 103, 104, 0.4);
+                    }
+                }
+
+                @include bp(tablet-sm){
+                    position: relative;
+                    width: 100%;
+                    right: 0;
+                    top: 0;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+.body-overlay{
+    background-color: color(black);
+    opacity: 0.3;
+    top:0;
+    bottom:0;
+    position: fixed;
+    z-index: 1000;
+    left:0;
+    right: 0;
+}

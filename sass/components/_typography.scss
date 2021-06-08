@@ -1,0 +1,164 @@
+/* ==========================================================================
+  Base Typography Styles
+  ========================================================================== */
+
+
+/* ==========================================================================
+   Base Type
+   ========================================================================== */
+* {
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    &::-moz-focus-inner {
+      border: 0;
+    }
+
+    outline: 0;
+  }
+}
+
+html {
+  @include font-rem($htmlFontSize);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @include font-rem($htmlFontSize);
+  line-height: $baseLineHeight;
+  color: color(black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// @font-face {
+//   font-family: 'Tiempos-heading';
+//   src: url('../font/TiemposHeadlineWeb-Light.eot'); /* IE9 Compat Modes */
+//   src: url('../font/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('../font/TiemposHeadlineWeb-Light.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('../font/TiemposHeadlineWeb-Light.woff') format('woff'), /* Pretty Modern Browsers */
+// } 
+
+body,
+input,
+select,
+textarea {
+  font-family: $baseFontFamily;
+}
+
+/* ==========================================================================
+   Headings and paragraph
+   ========================================================================== */
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+  // font-style: normal;
+   // @extend %baseSpacing;
+  font-family: $baseFontFamily;
+  color:color(black);
+  margin-bottom:24px;
+  font-weight: 400;
+  line-height: normal;
+  
+  @include bp(tablet-sm){
+    margin-bottom:18px;
+  }
+}
+
+h1,.h1 {
+  @include font-rem(44px, 54px);
+
+  @include bp(lg-laptop) {
+    @include font-rem(38px, 44px);
+  }
+
+  @include bp(mobile) {
+    @include font-rem(32px, 40px);
+  }
+
+
+}
+
+h2,.h2 {
+  @include font-rem(34px, 0);
+
+  @include bp(lg-laptop) {
+    @include font-rem(30px, 0);
+  }
+
+  @include bp(mobile) {
+    @include font-rem(28px, 34px);
+  }
+
+}
+
+h3,.h3 {
+  @include font-rem(30px, 36px);
+
+  @include bp(lg-laptop) {
+    @include font-rem(28px, 34px);
+  }
+
+  @include bp(mobile) {
+    @include font-rem(26px, 32px);
+  }
+}
+
+h4,.h4 {
+  @include font-rem(28px, 36px);
+
+  @include bp(mobile){
+    @include font-rem(24px, 34px);
+  }
+}
+
+h5,.h5 {
+  @include font-rem(24px, 36px);
+   @include bp(mobile) {
+     @include font-rem(22px, 30px);
+   }
+
+}
+
+h6,.h6 {
+  @include font-rem(20px, 30px);
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+li,div {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:not(.button) {
+  transition: .3s;
+  text-decoration: none;
+
+  &:hover {
+    color:color(pink);
+  }
+}
