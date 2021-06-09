@@ -190,7 +190,9 @@
     .desktop-holder{
         max-width: 672px;
         width: 100%;
-        padding-left: 26px;
+        @include bp(tablet-md){
+            padding-left: 26px;
+        }
     }
 
     .detail-wrapper {
@@ -622,6 +624,9 @@
 
             &:not(:last-child) {
                 margin-bottom: 38px;
+                @include bp(mobile-sm) {
+                    margin-bottom: 24px;
+                }
             }
 
             &:after {
@@ -639,7 +644,7 @@
                 @include font-rem(14px, 24px);
             }
 
-            @include bp(iphone-x) {
+            @include bp(mobile-sm) {
                 max-width: 100%;
                 flex: 0 0 100%;
                 padding-right: 0;

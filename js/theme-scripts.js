@@ -12,7 +12,7 @@ $(document).ready(function(){
     $('.right-wrapper .hamburger').click(function (e) {
         e.preventDefault();
         var win_width = $(window).width();
-        $('body').addClass('no-scroll').css('width', win_width+'px');
+        $('body,html').addClass('no-scroll').css('width', win_width+'px');
         $('.right-wrapper .nav-links').addClass('in');
          $('.right-wrapper .close').removeClass('d-none');
          $(this).addClass('d-none');
@@ -25,7 +25,7 @@ $(document).ready(function(){
         $(this).addClass('d-none');
         $('.right-wrapper .hamburger').removeClass('d-none');
         setTimeout(function () {
-            $('body').removeClass('no-scroll').attr('style','');
+            $('body,html').removeClass('no-scroll').attr('style','');
             $('.body-overlay').remove();
             
         }, 600);

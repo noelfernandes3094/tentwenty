@@ -126,4 +126,30 @@ footer{
 
         
     }
+
+    .chatbot{
+        background-color: color(pink);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+       text-align: center;
+       padding-top: 20px;
+        position: fixed;
+        bottom: 40px;
+        right:20px;
+        i{
+            color:color(white);
+            @include font-rem(26px);
+            @include bp(mobile) {
+              @include font-rem(20px);
+            }
+        }
+
+        @include bp(mobile){
+            width: 40px;
+            height: 40px;
+            bottom: 30px;
+            padding-top: 12px;
+        }
+    }
 }
