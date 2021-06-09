@@ -3,6 +3,7 @@ header{
     position: relative;
     z-index: 1002;
     background-color: color(white);
+    &.hover
     nav{
         padding:16px 0;
         .mid-wrapper{
@@ -292,6 +293,9 @@ header{
 
 .no-scroll{
     overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
+    height: 100vh;
 }
 
 .body-overlay{
